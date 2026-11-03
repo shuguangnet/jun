@@ -1,5 +1,7 @@
 # Jun
 
+English | [简体中文](README.zh-CN.md)
+
 A native macOS workspace for running terminal coding agents (Claude Code, Codex, Pi) side by side, across projects.
 
 - **Platform**: Apple Silicon Mac, macOS 13 or later
@@ -93,9 +95,10 @@ alias jun=/Applications/Jun.app/Contents/MacOS/Jun
 ## Development
 
 - **Requires**: macOS 13 or later, the Xcode command line tools, Go 1.27.3 or later.
-- Give development builds their own files, so they do not share a layout or settings with the installed app:
+- Give development builds their own files, so they do not share a layout or settings with the installed app. `./run.sh` does this for you:
 
 ```sh
+./run.sh   # same as:
 JUN_CONFIG_PATH="$PWD/priv/config.dev.json" JUN_SETTINGS_PATH="$PWD/priv/settings.dev.yaml" go run ./cmd/jun
 go test ./...
 go vet ./...
